@@ -1,1 +1,2 @@
 xtuner[deepspeed]
+modelscope
