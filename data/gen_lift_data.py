@@ -93,7 +93,7 @@ def gen_dataset_lift(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]门没开。",
                 "output": gen_output(
-                    thought="门还没有开，我要继续等待。",
+                    thought="盲人想去{}楼。门还没有开，我要继续等待。".format(target_floor),
                     method="get_door_state"
                 )
             })
@@ -102,7 +102,7 @@ def gen_dataset_lift(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]门开了。",
             "output": gen_output(
-                thought="门开了，我需要让盲人进入电梯。",
+                thought="盲人想去{}楼。门开了，我需要让盲人进入电梯。".format(target_floor),
                 method="move_in",
                 earphone="门开了，请进入电梯。"
             )
@@ -112,7 +112,7 @@ def gen_dataset_lift(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]已进入电梯。",
             "output": gen_output(
-                thought="盲人已经进入了电梯，我需要在到达{}楼时提醒盲人离开电梯。".format(target_floor),
+                thought="盲人想去{}楼。盲人已经进入了电梯，我需要在到达{}楼时提醒盲人离开电梯。".format(target_floor, target_floor),
                 method="get_floor_state",
                 earphone="您已进入电梯。我将在到达{}楼时提醒您。".format(target_floor)
             )
@@ -127,7 +127,7 @@ def gen_dataset_lift(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]已到达{}楼。".format(floor),
                 "output": gen_output(
-                    thought="当前是{}楼，不是{}楼，我要提醒盲人耐心等待。".format(floor, target_floor),
+                    thought="盲人想去{}楼。当前是{}楼，不是{}楼，我要提醒盲人耐心等待。".format(target_floor, floor, target_floor),
                     method="get_floor_state",
                     earphone="注意，当前是{}楼，不是{}楼，请您耐心等待。".format(floor, target_floor)
                 )
@@ -138,7 +138,7 @@ def gen_dataset_lift(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]已到达{}楼。".format(target_floor),
             "output": gen_output(
-                thought="当前已到达{}楼，我要提醒盲人等待电梯门开启。".format(target_floor),
+                thought="盲人想去{}楼。当前已到达{}楼，我要提醒盲人等待电梯门开启。".format(target_floor, target_floor),
                 method="get_door_state",
                 earphone="请注意，当前已到达{}楼，请等待电梯门开启。".format(target_floor),
             )
@@ -150,7 +150,7 @@ def gen_dataset_lift(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]门没开。",
                 "output": gen_output(
-                    thought="门还没有开，我要继续等待。",
+                    thought="当前已到达目标楼层。门还没有开，我要继续等待。",
                     method="get_door_state"
                 )
             })
@@ -159,7 +159,7 @@ def gen_dataset_lift(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]门开了。",
             "output": gen_output(
-                thought="门开了，我要提醒盲人离开电梯。",
+                thought="当前已到达目标楼层。门开了，我要提醒盲人离开电梯。",
                 method="move_out",
                 earphone="门开了，请离开电梯。"
             )
@@ -169,7 +169,7 @@ def gen_dataset_lift(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]已离开电梯。",
             "output": gen_output(
-                thought="盲人离开了电梯，任务完成。",
+                thought="当前已到达目标楼层。盲人离开了电梯，任务完成。",
                 method="exit",
                 earphone="好的，您已离开电梯，任务完成。"
             )

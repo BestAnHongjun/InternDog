@@ -29,7 +29,7 @@ if __name__ == "__main__":
             )
         }]})
     for func in gen_dataset_func:
-        conversation_train += func(10000)
+        conversation_train += func(50000)
     random.shuffle(conversation_train)
     
     conversation_valid = []

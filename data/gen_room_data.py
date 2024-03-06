@@ -91,17 +91,17 @@ def gen_dataset_room(num):
             "output": gen_output(
                 thought="盲人想去{}。我要开始向前移动。".format(target_room),
                 method="move_forward",
-                earphone="好的，您想去{}。请跟随我向前移动。"
+                earphone="好的，您想去{}。请跟随我向前移动。".format(target_room)
             )
         }, add_noise_prob=0)
         
         # 循环找M个房间
-        M = random.randint(0, 10)
+        M = random.randint(1, 10)
         for m in range(M):
             append_conversation(conversation, {
                 "input": "[底层程序消息]开始向前移动。",
                 "output": gen_output(
-                    thought="开始向前移动，检测门牌信息。",
+                    thought="盲人想去{}。开始向前移动，检测门牌信息。".format(target_room),
                     method="det_door"
                 )
             })
@@ -112,7 +112,7 @@ def gen_dataset_room(num):
                 append_conversation(conversation, {
                     "input": "[底层程序消息]没有检测到门牌信息。",
                     "output": gen_output(
-                        thought="暂时没有检测到门牌信息，继续向前移动。",
+                        thought="盲人想去{}。暂时没有检测到门牌信息，继续向前移动。".format(target_room),
                         method="det_door"
                     )
                 })
@@ -121,7 +121,7 @@ def gen_dataset_room(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]检测到门牌信息。",
                 "output": gen_output(
-                    thought="检测到门牌信息，停止运动。我要确认是否是目标房间。",
+                    thought="盲人想去{}。检测到门牌信息，停止运动。我要确认是否是目标房间。".format(target_room),
                     method="stop"
                 )
             })
@@ -130,7 +130,7 @@ def gen_dataset_room(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]已停止运动。",
                 "output": gen_output(
-                    thought="我正在确认是否是目标房间。",
+                    thought="盲人想去{}。我正在确认是否是目标房间。".format(target_room),
                     method="get_door_info"
                 )
             })
@@ -148,7 +148,7 @@ def gen_dataset_room(num):
                 append_conversation(conversation, {
                     "input": "[底层程序消息]{}边检测到门牌号{}。".format(direct, tmp_room),
                     "output": gen_output(
-                        thought="{}边检测到门牌号{}，盲人要去的房间是{}，当前没有到达目标房间，继续向前移动。".format(direct, tmp_room, target_room),
+                        thought="盲人想去{}。{}边检测到门牌号{}，盲人要去的房间是{}，当前没有到达目标房间，继续向前移动。".format(target_room, direct, tmp_room, target_room),
                         method="move_forward"
                     )
                 })
@@ -160,7 +160,7 @@ def gen_dataset_room(num):
                 append_conversation(conversation, {
                     "input": "[底层程序消息]左边检测到门牌号{}，右边检测到门牌号{}。".format(tmp_room, new_room),
                     "output": gen_output(
-                        thought="左边检测到门牌号{}，右边检测到门牌号{}, 盲人要去的房间是{}，当前没有到达目标房间，继续向前移动。".format(tmp_room, new_room, target_room),
+                        thought="盲人想去{}。左边检测到门牌号{}，右边检测到门牌号{}, 盲人要去的房间是{}，当前没有到达目标房间，继续向前移动。".format(target_room, tmp_room, new_room, target_room),
                         method="move_forward"
                     )
                 })
@@ -175,7 +175,7 @@ def gen_dataset_room(num):
             append_conversation(conversation, {
                 "input": "[底层程序消息]{}边检测到门牌号{}。".format(direct, target_room),
                 "output": gen_output(
-                    thought="{}边检测到盲人想去的房间{}，我要向{}转向。".format(direct, target_room, direct),
+                    thought="盲人想去{}。{}边检测到盲人想去的房间{}，我要向{}转向。".format(target_room, direct, target_room, direct),
                     method=direct_method,
                     earphone="{}边检测到您想去的房间{}，向{}转向。".format(direct, target_room, direct)
                 )
@@ -192,7 +192,7 @@ def gen_dataset_room(num):
             append_conversation(conversation, {
                 "input": inp, 
                 "output": gen_output(
-                    thought="{}边检测到盲人想去的房间{}，我要向{}转向。".format(direct, target_room, direct),
+                    thought="盲人想去{}。{}边检测到盲人想去的房间{}，我要向{}转向。".format(target_room, direct, target_room, direct),
                     method=direct_method,
                     earphone="{}边检测到您想去的房间{}，向{}转向。".format(direct, target_room, direct)
                 )
@@ -202,7 +202,7 @@ def gen_dataset_room(num):
         append_conversation(conversation, {
             "input": "[底层程序消息]已向{}转向。".format(direct),
             "output": gen_output(
-                thought="已到达目标房间，任务完成。",
+                thought="盲人想去{}。已到达目标房间{}，任务完成。".format(target_room, target_room),
                 method="exit",
                 earphone="已到达目标房间，任务完成。"
             )
