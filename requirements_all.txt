@@ -1,6 +1,4 @@
 xtuner[deepspeed]
 modelscope
 tqdm
-torch==2.1.2
-https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.6/flash_attn-2.5.6+cu118torch2.1cxx11abiFALSE-cp39-cp39-linux_x86_64.whl
 lmdeploy[all]==0.2.5
