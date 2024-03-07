@@ -1,7 +1,6 @@
 import os
-import json
-from lmdeploy import turbomind as tm
 
+from agent.model import chat
 from agent.utils import print_history, add_chat_history
 from agent.config import system_prompt_template, chat_prompt_template
 from agent.task_funcs import task_prompt, task_funcs
@@ -39,10 +38,6 @@ def choose_task():
 
 
 def main():
-    model_path = "./model/internlm2-chat-1_8b-merged" # 修改成你的路径
-
-    tm_model = tm.TurboMind.from_pretrained(model_path)
-    generator = tm_model.create_instance()
     
     task_id = -1
     
@@ -77,15 +72,7 @@ def main():
         if flag:
             prompt = prompt + response + "<|im_end|>\n" + chat_prompt_template.format(message)
             
-        input_ids = tm_model.tokenizer.encode(prompt)
-        for outputs in generator.stream_infer(session_id=0, input_ids=[input_ids]):
-            res = outputs[1]
-        response = tm_model.tokenizer.decode(res)
-        try:
-            response_dict = json.loads(response)
-        except ValueError:
-            response = "{\"thought\":\"" + response 
-            response_dict = json.loads(response)
+        prompt, response, response_dict = chat(prompt)
         add_chat_history(chat_history, "Bot", response)
 
 
