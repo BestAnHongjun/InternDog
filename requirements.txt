@@ -1,3 +1,4 @@
+torch==2.0.1
 modelscope
 tqdm
 lmdeploy[all]==0.2.5
