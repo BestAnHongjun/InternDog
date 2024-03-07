@@ -1,2 +1,3 @@
 xtuner[deepspeed]
 modelscope
+tqdm
