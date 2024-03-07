@@ -2,4 +2,4 @@ torch==2.0.1
 xtuner[deepspeed]
 modelscope
 tqdm
-lmdeploy[all]==0.2.5
+lmdeploy[all]==0.2.2
