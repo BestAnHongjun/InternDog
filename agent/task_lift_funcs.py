@@ -34,7 +34,7 @@ def get_door_state(message="", chat_history=[], chat_history_clear=[], prompt=""
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”选择当前电梯门状态。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”选择当前电梯门状态。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_lift_get_door_state=gr.update(visible=True)
         )
@@ -62,7 +62,7 @@ def get_floor_state(message="", chat_history=[], chat_history_clear=[], prompt="
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”选择当前到达的楼层。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”选择当前到达的楼层。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_lift_get_floor_state=gr.update(visible=True)
         )
@@ -78,7 +78,7 @@ def move_in(message="", chat_history=[], chat_history_clear=[], prompt="", task_
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`move_in`方法"),
@@ -96,7 +96,7 @@ def move_out(message="", chat_history=[], chat_history_clear=[], prompt="", task
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`move_out`方法"),

@@ -54,7 +54,7 @@ def get_surrounding_state(message="", chat_history=[], chat_history_clear=[], pr
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”模拟周边环境状况。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”模拟周边环境状况。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_street_get_surrounding_state=gr.update(visible=True)
         )
@@ -70,7 +70,7 @@ def move_forward(message="", chat_history=[], chat_history_clear=[], prompt="", 
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`move_forward`方法"),
@@ -88,7 +88,7 @@ def stop(message="", chat_history=[], chat_history_clear=[], prompt="", task_id=
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`stop`方法"),
@@ -106,7 +106,7 @@ def climb_mode(message="", chat_history=[], chat_history_clear=[], prompt="", ta
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`climb_mode`方法"),
@@ -124,7 +124,7 @@ def common_mode(message="", chat_history=[], chat_history_clear=[], prompt="", t
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
-            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactive=False),
             user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`common_mode`方法"),
