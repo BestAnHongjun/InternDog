@@ -3,3 +3,4 @@ xtuner[deepspeed]
 modelscope
 tqdm
 lmdeploy[all]==0.2.2
+gradio==3.50.2
