@@ -36,6 +36,8 @@ def get_door_info(message="", chat_history=[], chat_history_clear=[], prompt="",
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”输入当前检测到的门牌号。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_room_get_door_info=gr.update(visible=True)
         )
 
@@ -50,6 +52,8 @@ def move_forward(message="", chat_history=[], chat_history_clear=[], prompt="", 
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`move_forward`方法"),
             controller_common_message=gr.update(value="[底层程序消息]开始向前移动。")
@@ -66,6 +70,8 @@ def stop(message="", chat_history=[], chat_history_clear=[], prompt="", task_id=
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`stop`方法"),
             controller_common_message=gr.update(value="[底层程序消息]已停止运动。")
@@ -94,6 +100,8 @@ def det_door(message="", chat_history=[], chat_history_clear=[], prompt="", task
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id, 
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”决定当前检测结果。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_room_det_door=gr.update(visible=True)
         )
 
@@ -108,6 +116,8 @@ def turn_left(message="", chat_history=[], chat_history_clear=[], prompt="", tas
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`turn_left`方法"),
             controller_common_message=gr.update(value="[底层程序消息]已向左转向。")
@@ -124,6 +134,8 @@ def turn_right(message="", chat_history=[], chat_history_clear=[], prompt="", ta
     else:
         return return_to_web_demo(
             message, chat_history, chat_history_clear, prompt, task_id,
+            user_msg=gr.update(value="请通过右侧“底层程序模拟器”确认当前指令。", interactivate=False),
+            user_msg_submid=gr.update(interactive=False),
             controller_common=gr.update(visible=True),
             controller_common_method=gr.update(value="模型向底层程序调用了`turn_right`方法"),
             controller_common_message=gr.update(value="[底层程序消息]已向右转向。")
