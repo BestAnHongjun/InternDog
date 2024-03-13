@@ -56,10 +56,81 @@ python app_cli.py
 
 ### 1.训练数据生成
 
+<details>
+
+使用本项目开发的场景模拟器生成训练数据。
+
+```sh
+cd data
+python gen_all_data.py
+```
+
+</details>
+
 ### 2.模型微调
+
+<details>
+
+安装依赖项。
+
+```sh
+pip install -r requirements_all.txt
+```
+
+下载[InternLM2-Chat-1.8B-SFT](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-chat-1_8b-sft/summary)大模型。
+
+```sh
+python python fine-tune/download_pretrain_model.py 
+```
+
+基于xtuner微调模型。
+
+```sh
+xtuner train ./fine-tune/internlm2_1_8b_qlora_lift_e3.py --deepspeed deepspeed_zero2
+```
+
+生成Adapter。
+
+```sh
+# 注意修改.sh文件第六行模型文件路径
+./tools/1.convert_model.sh
+```
+
+合并Adapter。
+
+```sh
+# 注意修改模型路径
+./tools/2.merge_model.sh
+```
+
+</details>
 
 ### 3.模型量化
 
+<details>
+
+W4A16量化模型。
+
+```sh
+# 注意修改模型路径
+./tools/3.quantize_model.sh
+```
+
+转化为TurboMind模型。
+
+```sh
+# 注意修改模型路径
+./tools/4.turbomind_model.sh
+```
+
+</details>
+
 ### 4.模型部署
 
-## 
+请参考社区项目[LMDeploy-Jetson](https://github.com/BestAnHongjun/LMDeploy-Jetson)在Jetson板卡部署模型。
+
+## 开发团队
+
+团队成员：[安泓郡](https://www.anhongjun.top)，肖建功，赵昊飞
+导师：[孙哲](https://iopen.nwpu.edu.cn/info/1251/2076.htm), [李学龙](https://iopen.nwpu.edu.cn/info/1015/1172.htm)
+单位：西北工业大学光电与智能研究院
