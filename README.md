@@ -6,7 +6,7 @@
 
 模型仓库：[[ModelScope]](https://modelscope.cn/models/CoderAN/InternDog-w4a16-turbomind/summary)  [[OpenXLab]](https://openxlab.org.cn/models/detail/Coder-AN/InternDog-w4a16-turbomind)
 
-演示视频：[[BiliBili]]()
+演示视频：[[BiliBili]](https://www.bilibili.com/video/BV1RK421s7dm/)
 
 在线体验Demo：[[OpenXLab]](https://openxlab.org.cn/apps/detail/Coder-AN/InternDog)
 
@@ -14,6 +14,10 @@
 视障人士在日常生活中面临着诸多挑战，其中包括导航困难、安全隐患等。导盲犬的出现可以为他们提供更为便捷、安全的导航方式，有效改善其生活质量。然而，培养一只合格的导盲犬需要花费大量的时间。从幼犬的筛选、基础训练到专业技能的掌握，每一个阶段都需要有专业的训练师、场地和设备以及大量的时间和成本投入，培养一只传统导盲犬的成本可能高达20万元以上。
 
 四足机器人技术的快速发展使得机器狗代替传统导盲犬成为可能。机器狗导盲犬通过先进的传感器和算法，可以精确感知周围环境并做出智能决策，不受天气、时间或疲劳的限制。它们可以适应各种复杂环境，包括室内、室外、拥挤的城市街道等。开发一套程序可以以近乎零成本的方式迁移到无数台机器狗，使得机器导盲犬的成本相比传统导盲犬大大降低。为此，本团队结合大语言模型技术，开发了一只基于InternLM2大模型的离线具身智能导盲犬。
+
+## 演示视频
+
+<iframe src="//player.bilibili.com/player.html?aid=1701632325&bvid=BV1RK421s7dm&cid=1469102997&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 简介
 
