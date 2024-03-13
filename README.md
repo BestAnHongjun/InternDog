@@ -132,5 +132,7 @@ W4A16量化模型。
 ## 开发团队
 
 团队成员：[安泓郡](https://www.anhongjun.top)，肖建功，赵昊飞
+
 导师：[孙哲](https://iopen.nwpu.edu.cn/info/1251/2076.htm), [李学龙](https://iopen.nwpu.edu.cn/info/1015/1172.htm)
+
 单位：西北工业大学光电与智能研究院
