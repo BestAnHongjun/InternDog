@@ -3,3 +3,5 @@ __pycache__
 .vscode
 model
 work_dirs
+dataset
+.DS_Store
