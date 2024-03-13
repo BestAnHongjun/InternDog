@@ -56,8 +56,6 @@ python app_cli.py
 
 ### 1.训练数据生成
 
-<details>
-
 使用本项目开发的场景模拟器生成训练数据。
 
 ```sh
@@ -65,11 +63,7 @@ cd data
 python gen_all_data.py
 ```
 
-</details>
-
 ### 2.模型微调
-
-<details>
 
 安装依赖项。
 
@@ -103,11 +97,7 @@ xtuner train ./fine-tune/internlm2_1_8b_qlora_lift_e3.py --deepspeed deepspeed_z
 ./tools/2.merge_model.sh
 ```
 
-</details>
-
 ### 3.模型量化
-
-<details>
 
 W4A16量化模型。
 
@@ -122,8 +112,6 @@ W4A16量化模型。
 # 注意修改模型路径
 ./tools/4.turbomind_model.sh
 ```
-
-</details>
 
 ### 4.模型部署
 
