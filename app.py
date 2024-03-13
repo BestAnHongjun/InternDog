@@ -38,6 +38,8 @@ def common(msg, chat_history, chat_history_clear, prompt, task_id):
 
 with gr.Blocks() as demo:
     with gr.Row():
+        gr.HTML("""<h1>InternDog</h1>""")
+    with gr.Row():
         with gr.Tab("您与导盲犬的对话"):
             chatbot_clear = gr.Chatbot(height=500, label="历史消息")
         with gr.Tab("原始细节"):
@@ -159,4 +161,4 @@ with gr.Blocks() as demo:
 
 if __name__ == "__main__":
     os.environ["no_proxy"] = "localhost,127.0.0.1,::1"
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860)
