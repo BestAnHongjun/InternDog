@@ -15,10 +15,6 @@
 
 四足机器人技术的快速发展使得机器狗代替传统导盲犬成为可能。机器狗导盲犬通过先进的传感器和算法，可以精确感知周围环境并做出智能决策，不受天气、时间或疲劳的限制。它们可以适应各种复杂环境，包括室内、室外、拥挤的城市街道等。开发一套程序可以以近乎零成本的方式迁移到无数台机器狗，使得机器导盲犬的成本相比传统导盲犬大大降低。为此，本团队结合大语言模型技术，开发了一只基于InternLM2大模型的离线具身智能导盲犬。
 
-## 演示视频
-
-<iframe src="//player.bilibili.com/player.html?aid=1701632325&bvid=BV1RK421s7dm&cid=1469102997&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
 ## 简介
 
 InternDog使用情景模拟器生成的情景数据作为微调数据集，使用[Xtuner](https://github.com/InternLM/xtuner)工具基于[InternLM2-Chat-1.8B-SFT](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-chat-1_8b-sft/summary)模型进行微调，然后使用本团队开发的[LMDeploy-Jetson](https://github.com/BestAnHongjun/LMDeploy-Jetson)工具对模型进行W4A16量化，在宇树Go1机器狗板载NVIDIA Jetson Xavier NX (8G)上离线部署。
