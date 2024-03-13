@@ -33,6 +33,8 @@ InternDog使用情景模拟器生成的情景数据作为微调数据集，使�
 
 在线体验地址：[OpenXlab](https://openxlab.org.cn/apps/detail/Coder-AN/InternDog)
 
+![](./attach/openxlab.jpg)
+
 本地体验方法(8G显存以上NVIDIA GPU)：
 
 ```sh
@@ -124,3 +126,5 @@ W4A16量化模型。
 导师：[孙哲](https://iopen.nwpu.edu.cn/info/1251/2076.htm), [李学龙](https://iopen.nwpu.edu.cn/info/1015/1172.htm)
 
 单位：西北工业大学光电与智能研究院
+
+<div align="center"><img src="attach/iopen.jpg" width="350"></div>
